@@ -1,0 +1,42 @@
+<html>
+<head></head>
+ <body>
+    <div style="width: 100%; display: table;">
+        <div style="display: table-row; height: 100px;">
+            <div style="width: 50%; display: table-cell; background: green;">
+                Left Div 
+            </div>
+            <div style="display: table-cell; background: blue;"> 
+                Right Div
+            </div>
+        </div>
+    </div>
+ </body>
+</html>
+
+<html>
+<head></head>
+ <body>
+    <div style="width: 100%;">
+        <div style="width: 50%; height: 100px; float: left; background: blue;"> 
+            Left Div 
+        </div>
+        <div style="margin-left: 50%; height: 100px; background: green;"> 
+            <div style="margin-left: 50%; height: 100px; "> 
+	<table border=0>
+    <tr>
+      <th scope="row">
+Color      </th>
+    
+      <td>
+        {{result.data}}
+      </td> 
+    </tr>
+{% endfor %}
+
+    </table>
+	</div>
+        </div>
+    </div>
+ </body>
+</html>

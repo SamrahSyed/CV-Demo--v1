@@ -1,0 +1,167 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Emotional Detection</title>
+  </head>
+<!--  <!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Visionet Cognitive Engine</title>
+     
+   </head>
+   <body>
+      <header>
+         <div class="container">
+            <h1 class="logo">Visionet Cognitive Engine</h1>
+            <strong>
+               <nav>
+                  <ul class="menu">
+                     <li><a href="{{ url_for('cv_semantic_segmentation_FCN') }}">FCN</a></li>
+                     <li><a href="{{ url_for('cv_semantic_segmentation_PSPNet') }}">PSPNet</a></li>       
+                     <li><a href="{{ url_for('cv_semantic_segmentation_DeepLabV3') }}">DeepLabV3</a></li>                                 
+                  </ul>
+               </nav>
+            </strong>
+         </div>
+      </header>
+      {% block content %}
+      {% endblock %}
+   </body>
+</html> -->
+<!-- <!doctype html>
+<html lang="en">
+  <head>
+  	<title>Emotional Detection</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  
+  <body>
+  
+    <div class="wrapper d-flex align-items-stretch">
+      <nav id="sidebar">
+        <div class="custom-menu">
+          <button type="button" id="sidebarCollapse" class="btn btn-primary">
+            <i class="fa fa-bars"></i>
+            <span class="sr-only">Toggle Menu</span>
+          </button>
+        </div>
+        <div class="p-4 pt-5">
+          <h1><a href="{{ url_for('home') }}" class="logo">Visionet</a></h1>
+          <ul class="list-unstyled components mb-5">
+            <li class="active">
+              <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
+                class="dropdown-toggle">Computer Vision</a>
+              <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li>
+                  <a href="{{ url_for('cv_obd') }}">Object Detection</a>
+                </li>
+                <li>
+                  <a href="{{ url_for('cv_ins_home') }}">Instance Segmentation</a>
+                </li>
+                <li>
+                <li>
+                  <a href="{{ url_for('cv_semantic_segmentation') }}">Semantic Segmentation</a>
+                </li>
+            </li>
+            <li>
+            <li>
+              <a href="{{ url_for('cv_action_prediction') }}">Action Recognition</a>
+            </li>
+            </li>
+            <li>
+            <li>
+              <a href="{{ url_for('cv_PEST') }}">Pose Estimation</a>
+            </li>
+            </li>
+  
+            <li>
+              <a href="{{ url_for('cv_people_counter_show_home') }}">People Counter</a>
+            </li>
+          		<li>
+                      <a href="{{ url_for('cv_depth_home') }}">Depth Prediction</a>
+                  </li> -->
+      <!--       <li>
+              <a href="{{ url_for('cv_face_home') }}">Face Recognition</a>
+            </li>
+            <li>
+              <a href="{{ url_for('cv_emd_home') }}">Emotional Detection</a>
+            </li>
+
+          </ul>
+  
+  
+  
+          </li>
+  
+          </ul>
+  
+  
+  
+  
+  
+        </div>
+      </nav>    -->
+<body style="background-color:#fafafa;">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" rel="stylesheet">
+	<!-- <link href="slider-boxes.css" rel="stylesheet"> -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/slider-boxes.css') }}">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	
+	<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+	<script src="https://npmcdn.com/bootstrap@4.0.0-alpha.5/dist/js/bootstrap.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="application/json"></script>
+	<!-- <script src="slider-boxes.js"></script> -->
+	<script type="text/javascript" src="{{ url_for('static', filename='js/slider-boxes.js') }}"></script>
+	
+	<!-- <section class="orange-fade p-5 margin-top-xl pos-r"> -->
+	  <div class="container">
+		   <div class="row">
+			<div id="content" class="p-4 p-md-5 pt-5" >
+			 <!-- <div id="content" class="p-4 p-md-5 pt-5"> -->
+			<h1 style= "font-weight: 400; color:#2F5662;" align="center" >Emotional Detection</h1>
+			<p style="color:#458092;">Emotion recognition is the process of identifying human emotion. To date, the most work has been conducted on automating the recognition of facial expressions from video, spoken expressions from audio, written expressions from text, and physiology as measured by wearables. </p>
+			<!-- </div> -->
+		   <div class="mt-5 pos-r">
+			  <div class="carousel-controls testimonial-carousel-controls">
+				<div class="control prev"><i class="fa fa-chevron-left text-white">&nbsp;</i></div>
+				<div class="control next"><i class="fa fa-chevron-right text-white">&nbsp;</i></div>
+			  </div>
+			  <div class="testimonial-carousel">
+				<div class="one-slide white">
+				  <div class="testimonial w-100 h-100  p-3 text-center">
+					<div class="message text-center text-gray">Estimate the results of an image using the model:</div>
+					<a href="{{ url_for('cv_emd_test_home') }}">Haar Cascade</a>
+					<div class="separator">&nbsp;</div>
+					<div class="brand" ><img alt="Florida Dairy Farmers" src="/static/emd_1.png" class="mx-auto"/></div>
+				  </div>
+				</div>
+				<div class="one-slide white">
+					<div class="testimonial w-100 h-100  p-3 text-center">
+					  <div class="message text-center text-gray">Test your own emotions using your webcam!</div>
+					  <a href="{{ url_for('cv_emd_index') }}">Use Camera</a>
+					  <div class="separator">&nbsp;</div>
+					  <div class="brand" ><img alt="Florida Dairy Farmers" src="/static/emd_2.gif" class="mx-auto"/></div>
+					</div>
+				  </div>
+				</div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+    </div>
+    </body>
+    </html>
+	<!-- </section> -->
+	

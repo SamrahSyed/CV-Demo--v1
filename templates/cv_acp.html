@@ -1,0 +1,116 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Action Prediction</title>
+  </head>
+  <!-- <!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Visionet Cognitive Engine</title>
+     
+   </head>
+   <body>
+      <header>
+         <div class="container">
+            <h1 class="logo">Visionet Cognitive Engine</h1>
+            <strong>
+               <nav>
+                  <ul class="menu">
+                     <li><a href="{{ url_for('cv_action_prediction_TSN_PIC') }}">TSN_PIC</a></li>
+					 <li><a href="{{ url_for('cv_action_prediction_VID_I3D') }}">I3D VID</a></li>
+                  </ul>
+               </nav>
+            </strong>
+         </div>
+      </header>
+      {% block content %}
+      {% endblock %}
+   </body>
+</html> -->
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" rel="stylesheet">
+<!-- <link href="slider-boxes.css" rel="stylesheet"> -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/slider-boxes.css') }}">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+<script src="https://npmcdn.com/bootstrap@4.0.0-alpha.5/dist/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="application/json"></script>
+<!-- <script src="slider-boxes.js"></script> -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/slider-boxes.js') }}"></script>
+
+<section class="orange-fade p-5 margin-top-xl pos-r">
+  <div class="container">
+   	<div class="row">
+		<div class="col-sm-12">
+        <h1 style= "font-weight: 400; color:#2F5662;" align="center" >Action Prediction</h1>
+        <p style="color:#458092">Action Prediction is a computer technology related to computer vision, image processing, and deep learning that deals with detecting actions of objects in images and videos.</p>
+       <div class="mt-5 pos-r">
+          <div class="carousel-controls testimonial-carousel-controls">
+            <div class="control prev"><i class="fa fa-chevron-left text-white">&nbsp;</i></div>
+            <div class="control next"><i class="fa fa-chevron-right text-white">&nbsp;</i></div>
+          </div>
+          <div class="testimonial-carousel">
+		  <div class="one-slide white">
+              <div class="testimonial w-100 h-100  p-3 text-center">
+                <div class="message text-center text-gray">Estimate the results of an image using the model:</div>
+				<a href="{{ url_for('cv_action_prediction_TSN_PIC') }}">TSN_PIC</a>
+                <div class="separator">&nbsp;</div>
+                <div class="brand"><img alt="Florida Dairy Farmers" src="/static/obd_1.jpg" class="mx-auto"/></div>
+              </div>
+            </div>
+		  <div class="one-slide white">
+              <div class="testimonial w-100 h-100  p-3 text-center">
+                <div class="message text-center text-gray">Estimate the results of a video using the model:</div>
+				<a href="{{ url_for('cv_action_prediction_VID_I3D') }}">I3D VID</a>
+                <div class="separator">&nbsp;</div>
+               <div class="brand"><img alt="Florida Department of Education" src="/static/acp_2.gif" class="mx-auto"/></div>
+              </div>
+            </div>
+            
+            
+            <div class="one-slide white">
+              <div class="testimonial w-100 h-100  p-3 text-center">
+                <div class="message text-center text-gray">Estimate the results of a video using the model:</div>
+				<a href="{{ url_for('cv_action_prediction_VID_TSN') }}">TSN VID</a>
+                <div class="separator">&nbsp;</div>
+                <div class="brand"><img alt="Seminole County" src="/static/acp_3.gif" class="mx-auto" /></div>
+              </div>
+            </div>
+           <div class="one-slide white">
+              <div class="testimonial w-100 h-100  p-3 text-center">
+                <div class="message text-center text-gray">Estimate the results of a video using the model:</div>
+                <a href="{{ url_for('cv_action_prediction_VID_SlowFast') }}">Slow Fast</a>
+				<div class="separator">&nbsp;</div>
+                <div class="brand"><img alt="Lynx" src="/static/acp_4.gif" class="mx-auto" /></div>
+              </div>
+            </div>
+          <!--<div class="one-slide white">
+              <div class="testimonial w-100 h-100  p-3 text-center">
+                <div class="message text-center text-gray">Check out how the ML model performs using video!</div>
+				<a href="{{ url_for('cv_obd_MOB_NET') }}">Use Video</a>
+                <div class="separator">&nbsp;</div>
+                <div class="brand"><img alt="Miami Beach VCA" src="/static/obd_6.gif" class="mx-auto" /></div>
+              </div> 
+            </div> -->
+			<!-- <div class="one-slide white">
+              <div class="testimonial w-100 h-100  p-3 text-center">
+                <div class="message text-center text-gray">You can even use your webcam to run the ML model on your ownself!</div>
+				<a href="{{ url_for('cv_obd_cam') }}">Use Camera</a>
+                <div class="separator">&nbsp;</div>
+                <div class="brand"><img alt="Oneblood" src="/static/obd_7.gif"class="mx-auto" /></div>
+              </div>
+            </div>  -->
+			</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</html>

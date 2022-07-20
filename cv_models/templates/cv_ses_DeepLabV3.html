@@ -1,0 +1,38 @@
+{% extends 'base_default.html' %}
+
+{% block tab_title %}
+	DeepLab V3
+{% endblock %}
+
+{% block main_title %}
+  Semantic Segmentation
+{% endblock %}
+
+{% block sub_title %}
+DeepLab V3
+{% endblock %}
+
+{% block sub_title_bold %} 
+DeepLab V3
+{% endblock %}
+
+{% block description %}
+is a semantic segmentation architecture that improves upon DeepLabv2 with several modifications. To handle the problem of segmenting objects at multiple scales, modules are designed which employ atrous convolution in cascade or in parallel to capture multi-scale context by adopting multiple atrous rates.
+{% endblock %}
+
+{% block src %}
+src="{{ url_for('cv_ses_DeepLabV3_display_image', filename=filename) }}"
+{% endblock %}
+
+{% block URL %} 
+/cv/semantic_segmentation/DeepLabV3
+{% endblock %}
+
+{% block video_or_image_text %} 
+  an image
+{% endblock %}
+
+{% block upload_type %}
+<input type="file" name="file" autocomplete="off" required>
+{% endblock %}
+

@@ -1,0 +1,30 @@
+<script>
+ window.onload = function()
+	  {
+	  var txt = document.getElementById('myInput');
+      document.getElementById('download').onclick = function(code)
+		{
+      this.href = 'data:text/doc;charset=utf-8,' + encodeURIComponent(txt.value);
+        };
+      };
+function myFunction() {
+  var copyText = document.getElementById("myInput");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  alert("Copied the text: " + copyText.value);
+}
+main();
+</script>
+  <h1 align="center" style="color:white;">Output Summarized Text :</h1><br>
+<div class="card card-1">
+  <br><br>{{ res }}<br><br><br>
+  <div id="editor"></div>
+  <center>EDIT <i class="fa fa-hand-o-down"> -- </i> Download <a download="Summarizied-Content.doc" id="download" title="Download as PDF"><i class="fa fa-cloud-download"></i></a>  Copy  <button title="Copy to Clipboard" id="copying" onclick="myFunction()"><i class="fa fa-copy"></i></button>
+    <textarea id="myInput">{{ res }}</textarea>
+</center>
+</div>
+<!-- <div class="footer">
+  <footer style="color:black;font-weight:600;">&copy; Copyright 2020 MVK</footer>
+</div> -->
+</body>

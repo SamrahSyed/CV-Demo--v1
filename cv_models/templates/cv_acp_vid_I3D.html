@@ -1,0 +1,60 @@
+{% extends 'base_acp.html' %}
+
+{% block tab_title %}
+  I3D Video
+{% endblock %}
+
+{% block main_title %}
+  Action Prediction
+{% endblock %}
+
+{% block sub_title %}
+  I3D Video
+{% endblock %}
+
+{% block sub_title_bold %} 
+  I3D (Inflated 3D Networks) Video
+{% endblock %}
+
+{% block description %}
+  is a widely adopted 3D video classification network. It uses 3D convolution to learn spatiotemporal information is directly from videos. I3D is proposed to improve C3D (Convolutional 3D Networks) by inflating from 2D models.
+{% endblock %}
+
+{% block src %}
+<video autoplay="autoplay" controls="controls" preload="preload" style="width:500px"  >
+  <source src="{{ url_for('cv_acp_vid_TSN_display_video', filename=filename) }}" type="video/mp4"></source>
+</video>
+{% endblock %}
+
+{% block URL %} 
+/cv/action_prediction/I3D_VID
+{% endblock %}
+
+{% block video_or_image_text %} 
+  a video
+{% endblock %}
+
+{% block upload_type %}
+<input type="button" id="loadFileXml" value="Upload Video" onclick="document.getElementById('file').click();" />
+<input type="file" style="display:none;" id="file" name="file" autocomplete="off" required />
+{% endblock %}
+
+{% block acp_table %}
+<table border=0 width=100%>
+	{% if filename %}
+	<p style="color:#2F5662;" ><b>The input video frame is classified to be:</b>
+	{% endif %}
+	</p>
+	{% for result in results%}
+	<tr>
+		<th scope="row">
+			{{result.header}}
+		</th>
+		
+		<td align='right'>
+			<pre style="color:#458092;">{{result.data}}</pre>
+		</td> 
+	</tr>
+	{% endfor %}
+    </table>
+{% endblock %}

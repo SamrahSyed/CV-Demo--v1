@@ -1,0 +1,10 @@
+1. ppl counter stopped working after loader. Find out whats wrong and fix
+2. Fix video paths wrt database
+3. Fix face recognition (Currently it opens on a new local path)
+4. Make the loader in the center, bigger, better
+5. Have the loader in camera as well
+6. Work on new solutions found to make camera faster
+7. Make a dropdown for pose estimation instead of checkboxes and put all the classes in and fix content
+8. Connect to the database
+9. Put on a server
+

@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Haar Cascade</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  
+  <body>
+    <div id="loading"></div>
+    <div class="wrapper d-flex align-items-stretch">
+      <nav id="sidebar">
+        <div class="custom-menu">
+          <button type="button" id="sidebarCollapse" class="btn btn-primary">
+            <i class="fa fa-bars"></i>
+            <span class="sr-only">Toggle Menu</span>
+          </button>
+        </div>
+        <div class="p-4 pt-5">
+          <h1><a href="{{ url_for('home') }}" class="logo">Visionet</a></h1>
+          <ul class="list-unstyled components mb-5">
+            <li class="active">
+              <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
+                class="dropdown-toggle">Computer Vision</a>
+              <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li>
+                  <a href="{{ url_for('cv_obd') }}">Object Detection</a>
+                </li>
+                <li>
+                  <a href="{{ url_for('cv_ins_home') }}">Instance Segmentation</a>
+                </li>
+                <li>
+                <li>
+                  <a href="{{ url_for('cv_semantic_segmentation') }}">Semantic Segmentation</a>
+                </li>
+            </li>
+            <li>
+            <li>
+              <a href="{{ url_for('cv_action_prediction') }}">Action Prediction</a>
+            </li>
+            </li>
+            <li>
+            <li>
+              <a href="{{ url_for('cv_PEST') }}">Pose Estimation</a>
+            </li>
+            </li>
+  
+            <li>
+              <a href="{{ url_for('cv_people_counter_show_home') }}">People Counter</a>
+            </li>
+
+            <li>
+              <a href="{{ url_for('cv_face_home') }}">Face Recognition</a>
+            </li>
+            <li>
+              <a href="{{ url_for('cv_emd_home') }}">Emotional Detection</a>
+            </li>
+
+          </ul>
+  
+  
+  
+          </li>
+  
+          </ul>
+  
+  
+  
+  
+  
+        </div>
+      </nav>
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+<style>
+  
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 1000%;
+  max-width: 715px;
+/*   width: 80%;
+  max-width: 700px; */
+}
+
+/* Caption of Modal Image */
+/* #caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+} */
+
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+</style>
+<style>
+	img {
+  	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+	width: 35%
+	}
+</style>
+	<h6 style="font-weight: 400;color: #6d94a1;" align="center">Emotional Detection</h6>
+		<h1  style= "font-weight: 400; color:#2F5662;" align="center"  >Haar Cascade</h1>
+		<p style="color:#458092;"><b>Haar Cascade</b>  is a machine learning-based approach where a lot of positive and negative images are used to train the classifier. A Haar-like feature considers adjacent rectangular regions at a specific location in a detection window, sums up the pixel intensities in each region and calculates the difference between these sums.</p>
+
+
+        
+		<!-- <h6>Upload an image to predict results</h6> -->
+{% if filename %}
+<p>
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		<ul>
+		<!-- {% for message in messages %} -->
+		  <li>{{ message }}</li>
+	<!-- 	{% endfor %} -->
+		</ul>
+	  {% endif %}
+	{% endwith %}
+</p>
+
+	<div>
+		<img id="myImg" src="{{ url_for('cv_emd_test_display_image', filename=filename) }}" class="center">
+  </div>
+  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+{% endif %}
+
+<form method="post" action="/cv/emd/test_page" enctype="multipart/form-data">
+    <!-- <input type="submit" value="Submit"> -->
+	<h6>Upload an image to predict results</h6>
+    <dl>
+		<!-- <p> -->
+			<input type="file" name="file" autocomplete="off" required>
+		<!-- </p> -->
+    </dl>
+    <p>
+		<input type="submit" value="Submit" onclick="loading()">
+	</p>
+</form>
+      </div>
+		</div>
+
+    <script>
+      // Get the modal
+      var modal = document.getElementById("myModal");
+      
+      // Get the image and insert it inside the modal - use its "alt" text as a caption
+      var img = document.getElementById("myImg");
+      var modalImg = document.getElementById("img01");
+      var captionText = document.getElementById("caption");
+      img.onclick = function(){
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+      }
+      
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+      
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() { 
+        modal.style.display = "none";
+      }
+      </script>
+  
+  
+  <script type="text/javascript">// <![CDATA[
+          function loading(){
+              $("#loading").show();
+              $("#content").hide();       
+          }
+  // ]]></script>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+
+  </body>
+</html>

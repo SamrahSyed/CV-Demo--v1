@@ -1,0 +1,87 @@
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Pose Estimation</title>
+  </head>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" rel="stylesheet">
+<!-- <link href="slider-boxes.css" rel="stylesheet"> -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/slider-boxes.css') }}">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+<script src="https://npmcdn.com/bootstrap@4.0.0-alpha.5/dist/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="application/json"></script>
+<!-- <script src="slider-boxes.js"></script> -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/slider-boxes.js') }}"></script>
+
+<section class="orange-fade p-5 margin-top-xl pos-r">
+  <div class="container">
+   	<div class="row">
+		<div class="col-sm-12">
+		
+        <h1 style= "font-weight: 400; color:#2F5662;" align="center" >Pose Estimation</h1>
+        <p style="color:#458092">Human Pose Estimation is defined as the problem of localization of human joints (also known as keypoints - elbows, wrists, etc) in images or videos. It is also defined as the search for a specific pose in space of all articulated poses. Use cases include activity recognition (sick person falling down or security and surveillance), motion capture and augmented reality, training robots, fitness, retail virtual try-ons, and so on. </p>
+       <div class="mt-5 pos-r">
+          <div class="carousel-controls testimonial-carousel-controls">
+            <div class="control prev"><i class="fa fa-chevron-left text-white">&nbsp;</i></div>
+            <div class="control next"><i class="fa fa-chevron-right text-white">&nbsp;</i></div>
+          </div>
+          <div class="testimonial-carousel">
+            <div class="one-slide white">
+              <div class="testimonial w-100 h-100  p-3 text-center">
+                <div class="message text-center text-gray">Estimate the results of an image using the library:</div>
+				<a href="{{ url_for('cv_PEST_SimplePose') }}">Simple Pose</a>
+                <div class="separator">&nbsp;</div>
+                <div class="brand"><img alt="Florida Dairy Farmers" src="/static/pest_1.jpg" class="mx-auto"/></div>
+              </div>
+            </div>
+            <div class="one-slide white">
+              <div class="testimonial w-100 h-100  p-3 text-center">
+                <div class="message text-center text-gray">Estimate the results of an image using the library:</div>
+				<a href="{{ url_for('cv_PEST_AlphaPose') }}">Alpha Pose</a>
+                <div class="separator">&nbsp;</div>
+                <div class="brand"><img alt="Florida Department of Education" src="/static/pest_2.jpg" class="mx-auto"/></div>
+              </div>
+            </div>
+            <div class="one-slide white">
+              <div class="testimonial w-100 h-100  p-3 text-center">
+                <div class="message text-center text-gray">Estimate the results of an image using your webcam:</div>
+				<a href="{{ url_for('cv_PEST_SimplePose_cam') }}">Use Camera</a>
+                <div class="separator">&nbsp;</div>
+                <div class="brand"><img alt="Seminole County" src="/static/pest_1.jpg" class="mx-auto" /></div>
+              </div>
+            </div>
+           <!--  <div class="one-slide white">
+              <div class="testimonial w-100 h-100  p-3 text-center">
+                <div class="message text-center text-gray">If you are looking for a great CMS company then Solodev is the right choice.</div>
+                <div class="separator">&nbsp;</div>
+                <div class="brand"><img alt="Lynx" src="https://raw.githubusercontent.com/solodev/slider-boxes/master/images/img-4.png" class="mx-auto" /></div>
+              </div>
+            </div>
+            <div class="one-slide white">
+              <div class="testimonial w-100 h-100  p-3 text-center">
+                <div class="message text-center text-gray">Everyone on the Solodev team is very knowledgeable and they have been always been very responsive.</div>
+                <div class="separator">&nbsp;</div>
+                <div class="brand"><img alt="Miami Beach VCA" src="https://raw.githubusercontent.com/solodev/slider-boxes/master/images/img-5.png" class="mx-auto" /></div>
+              </div>
+            </div>
+            <div class="one-slide white">
+              <div class="testimonial w-100 h-100  p-3 text-center">
+                <div class="message text-center text-gray">Solodev has been able to successfully keep us at the forefront of our industry and continually meet our ever adapting needs.</div>
+                <div class="separator">&nbsp;</div>
+                <div class="brand"><img alt="Oneblood" src="https://raw.githubusercontent.com/solodev/slider-boxes/master/images/img-6.png" class="mx-auto" /></div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</html>
+c

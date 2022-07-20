@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Computer Vision</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+	<div class="wrapper d-flex align-items-stretch">
+		<nav id="sidebar">
+			<div class="custom-menu">
+				<button type="button" id="sidebarCollapse" class="btn btn-primary">
+					<i class="fa fa-bars"></i>
+					<span class="sr-only">Toggle Menu</span>
+				</button>
+			</div>
+			<div class="p-4 pt-5">
+				<h1><a href="{{ url_for('home') }}" class="logo">Visionet</a></h1>
+				<ul class="list-unstyled components mb-5">
+					<li class="active">
+						<a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
+							class="dropdown-toggle">Computer Vision</a>
+						<ul class="collapse list-unstyled" id="homeSubmenu">
+							<li>
+								<a href="{{ url_for('cv_obd') }}">Object Detection</a>
+							</li>
+							<li>
+								<a href="{{ url_for('cv_ins_home') }}">Instance Segmentation</a>
+							</li>
+							<li>
+							<li>
+								<a href="{{ url_for('cv_semantic_segmentation') }}">Semantic Segmentation</a>
+							</li>
+					</li>
+					<li>
+					<li>
+						<a href="{{ url_for('cv_action_prediction') }}">Action Prediction</a>
+					</li>
+					</li>
+					<li>
+					<li>
+						<a href="{{ url_for('cv_PEST') }}">Pose Estimation</a>
+					</li>
+					</li>
+
+					<li>
+						<a href="{{ url_for('cv_people_counter_show_home') }}">People Counter</a>
+					</li>
+					<!-- 		<li>
+                    <a href="{{ url_for('cv_depth_home') }}">Depth Prediction</a>
+                </li> -->
+					<li>
+						<a href="{{ url_for('cv_face_home') }}">Face Recognition</a>
+					</li>
+					<li>
+						<a href="{{ url_for('cv_emd_home') }}">Emotional Detection</a>
+					</li>
+			
+				</ul>
+
+
+
+				</li>
+
+				</ul>
+
+
+
+
+
+			</div>
+		</nav>
+
+		<!-- Page Content  -->
+		<div id="content" class="p-4 p-md-5 pt-5">
+
+			<h1 align="center">Computer Vision</h1>
+			<p style="color:#458092;">Computer vision is the field of study surrounding how computers see and understand
+				digital images and videos. Computer vision spans all tasks performed by biological vision systems,
+				including "seeing" or sensing a visual stimulus, understanding what is being seen, and extracting
+				complex information into a form that can be used in other processes.</p>
+			<h1 align="center">
+				<div class="brand"><img alt="Seminole County" src="/static/wallpaper2.gif" class="mx-auto" width="1000"
+						height="420" /></div>
+			</h1>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+		crossorigin="anonymous"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+
+<title>Python Flask Multiple Files Upload Example</title>
+<h2>Select file(s) to upload</h2>
+<form class="form" action="/predict" method="post" enctype="multipart/form-data">
+    <div class="row">
+        <p class="label">Sample files</p>
+        <input class="input" type="file" name="sample" multiple="true" autocomplete="off" required>
+    </div>
+    <div class="row">
+        <p class="label">Folder Name</p>
+        <input type="text" name="folder" required>
+    </div>
+    <div class="row">
+        <p class="label">Training File</p>
+        <input class="input" type="file" name="test" multiple="false" autocomplete="off" required>
+    </div>
+
+    <input type="submit" name="submit" value="Predict">
+
+</form>
+
+<div>
+    <img src="{{ url_for('cv_display_image', filename=filename) }}">
+</div>

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Sidebar 02</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	          <i class="fa fa-bars"></i>
+	          <span class="sr-only">Toggle Menu</span>
+	        </button>
+        </div>
+				<div class="p-4 pt-5">
+		  		<h1><a href="index.html" class="logo">Visionet</a></h1>
+	        <ul class="list-unstyled components mb-5">
+	          <li class="active">
+	            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Computer Vision</a>
+	            <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li>
+                    <a href="{{ url_for('cv_instance_segmentation') }}">Instance Segmentation</a>
+                </li>
+                <!-- <li> -->
+                    <!-- <a href="{{ url_for('cv_semantic_segmentation') }}">Semantic Segmentation</a> -->
+                <!-- </li> -->
+				 <!-- <li>
+                      <li>
+              <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Semantic Segmentation</a>
+              <ul class="collapse list-unstyled" id="pageSubmenu">
+               <li>
+                    <a href="{{ url_for('cv_semantic_segmentation_FCN') }}">FCN</a>
+                </li>
+				<li>
+                    <a href="{{ url_for('cv_semantic_segmentation_PSPNet') }}">PSPNet</a>
+                </li>
+				<li>
+                    <a href="{{ url_for('cv_semantic_segmentation_DeepLabV3') }}">DeepLabV3</a>
+                </li>
+              </ul>
+	          </li>
+                </li> -->
+               <!--  <li>
+                      <li>
+              <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Action Prediction</a>
+              <ul class="collapse list-unstyled" id="pageSubmenu">
+                <li>
+                    <a href="{{ url_for('cv_action_prediction_TSN_PIC') }}">TSN_Pic</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('cv_action_prediction_VID_I3D') }}">I3D VID</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('cv_action_prediction_VID_TSN') }}">TSN VID</a>
+                </li>
+				 <li>
+                    <a href="{{ url_for('cv_action_prediction_VID_SlowFast') }}">SlowFast VID</a>
+                </li>
+              </ul>
+	          </li>
+                </li> -->
+				 <!-- <li>
+                    <a href=#}">Face Detection</a>
+                </li> -->
+				 <li>
+                      <li>
+              <a href="{{ url_for('cv_semantic_segmentation') }}" >Semantic Segmentation</a>
+			  </li>
+                </li>
+				 <li>
+                      <li>
+              <a href="{{ url_for('cv_action_prediction') }}" >Action Prediction</a>
+			  </li>
+                </li>
+				 <li>
+                      <li>
+              <a href="{{ url_for('cv_PEST') }}" >Pose Estimation</a>
+			  </li>
+                </li>
+             <!--  <ul class="collapse list-unstyled" id="pageSubmenu">
+                <li>
+                    <a href="{{ url_for('cv_PEST_SimplePose') }}">Simple Pose</a>
+                </li>
+				<li>
+                    <a href="{{ url_for('cv_PEST_AlphaPose') }}">Alpha Pose</a>
+                </li>
+				 <li>
+                    <a href="{{ url_for('cv_PEST_SimplePose_cam') }}">Webcam pose estimation</a>
+                </li>
+              </ul> -->
+	          
+                   
+             
+               <li>
+                    <a href="{{ url_for('cv_obd') }}">Object Detection</a>
+                </li>
+				<li>
+                    <a href="{{ url_for('cv_depth_show') }}">Depth Prediction</a>
+                </li>
+				<li>
+                    <a href="{{ url_for('cv_people_counter_show') }}">People Counter</a>
+                </li>
+              </ul>
+	          
+                
+	           
+	          </li>
+
+	          <li>
+              <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">NLP</a>
+              <ul class="collapse list-unstyled" id="pageSubmenu">
+                <li>
+                    <a href="#">NLP 1</a>
+                </li>
+                <li>
+                    <a href="#">NLP 2</a>
+                </li>
+                <li>
+                    <a href="#">NLP 3</a>
+                </li>
+              </ul>
+	          </li>
+	         
+	        </ul>
+
+
+
+	        
+
+	      </div>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+
+		<h2 class="mb-4">People Counter</h2>
+        <h5>Select a video to upload and predict results</h5>
+<p>
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		<ul>
+		{% for message in messages %}
+		  <li>{{ message }}</li>
+		{% endfor %}
+		</ul>
+	  {% endif %}
+	{% endwith %}
+</p>
+{% if filename %}
+	<div style="margin: 10px auto;">
+		<video autoplay="autoplay" controls="controls" preload="preload">
+			<source src="{{ url_for('cv_people_counter1_display_video', filename=filename) }}" type="video/mp4"></source>
+		</video>
+	</div>
+{% endif %}
+<form method="post" action="/cv/people_counter1" enctype="multipart/form-data">
+    <dl>
+		<p>
+			<input type="file" name="file" autocomplete="off" required>
+		</p>
+    </dl>
+    <p>
+		<input type="submit" value="Upload">
+	</p>
+</form>
+      </div>
+		</div>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+<!-- 	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/popper.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script> -->
+  </body>
+</html>

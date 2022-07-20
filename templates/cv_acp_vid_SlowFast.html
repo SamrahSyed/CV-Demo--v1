@@ -1,0 +1,60 @@
+{% extends 'base_acp.html' %}
+
+{% block tab_title %}
+  Slow Fast
+{% endblock %}
+
+{% block main_title %}
+  Action Prediction
+{% endblock %}
+
+{% block sub_title %}
+  Slow Fast
+{% endblock %}
+
+{% block sub_title_bold %} 
+  Slow Fast
+{% endblock %}
+
+{% block description %}
+  is a new 3D video classification model, aiming for best trade-off between accuracy and efficiency. It proposes two branches, fast branch and slow branch, to handle different aspects in a video. Fast branch is to capture motion dynamics by using many but small video frames. Slow branch is to capture fine appearance details by using few but large video frames.
+{% endblock %}
+
+{% block src %}
+<video autoplay="autoplay" controls="controls" preload="preload" style="width:500px"  >
+  <source src="{{ url_for('cv_acp_vid_TSN_display_video', filename=filename) }}" type="video/mp4"></source>
+</video>
+{% endblock %}
+
+{% block URL %} 
+  /cv/action_prediction/SlowFast_VID
+{% endblock %}
+
+{% block video_or_image_text %} 
+  a video
+{% endblock %}
+
+{% block upload_type %}
+<input type="button" id="loadFileXml" value="Upload Video" onclick="document.getElementById('file').click();" />
+<input type="file" style="display:none;" id="file" name="file" autocomplete="off" required />
+{% endblock %}
+
+{% block acp_table %}
+<table border=0 width=100%>
+	{% if filename %}
+	<p style="color:#2F5662;" ><b>The input video frame is classified to be:</b>
+	{% endif %}
+	</p>
+	{% for result in results%}
+	<tr>
+		<th scope="row">
+			{{result.header}}
+		</th>
+		
+		<td align='right'>
+			<pre style="color:#458092;">{{result.data}}</pre>
+		</td> 
+	</tr>
+	{% endfor %}
+    </table>
+{% endblock %}

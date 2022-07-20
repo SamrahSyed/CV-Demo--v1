@@ -1,0 +1,31 @@
+<body>
+	<div class="body" ng-app="myApp">
+		<div class="wrapper" ng-controller="MyCtrl">
+		<h1 style="color:white;">SUMMARIZE YOUR TEXT</h1>
+	<form name="form" action="/nlp/summarization/abs"  method="POST">
+	  <textarea cols="100" rows="25" name="textarea" id="textarea"></textarea>   
+	<br>
+	<br>
+		<div class="button">
+		<input type="submit" class="button" value="SUBMIT">
+		</div>
+	</form>
+	  </div>
+	</div>
+<!-- 	<br><br>
+	<div class="footer">
+	  <footer style="color:black;font-weight:600;">&copy; Copyright 2020 MVK</footer>
+	</div> -->
+	<body>
+		<h1 align="center" style="color:white;">Output Summarized Text :</h1><br>
+		<div class="card card-1">
+		  <br><br>{{ res }}<br><br><br>
+		  <div id="editor"></div>
+		  <!-- <center>EDIT <i class="fa fa-hand-o-down"> -- </i> Download <a download="Summarizied-Content.doc" id="download" title="Download as PDF"><i class="fa fa-cloud-download"></i></a>  Copy  <button title="Copy to Clipboard" id="copying" onclick="myFunction()"><i class="fa fa-copy"></i></button>
+			<textarea id="myInput">{{ res }}</textarea>
+		</center> -->
+		</div>
+		<!-- <div class="footer">
+		  <footer style="color:black;font-weight:600;">&copy; Copyright 2020 MVK</footer>
+		</div> -->
+		</body>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Computer Vision</title>
+     
+   </head>
+   <body>
+      <header>
+         <div class="container">
+            <h1 class="logo">Computer Vision</h1>
+            <strong>
+               <nav>
+                  <ul class="menu">
+                     <li><a href="{{ url_for('cv_instance_segmentation') }}">Instance Segmentation</a></li>
+                     <li><a href="{{ url_for('cv_semantic_segmentation') }}">Semantic Segmentation</a></li>
+                     <li><a href="{{ url_for('cv_action_prediction') }}">Action Prediction</a></li>
+                  </ul>
+               </nav>
+            </strong>
+         </div>
+      </header>
+      {% block content %}
+      {% endblock %}
+   </body>
+</html>

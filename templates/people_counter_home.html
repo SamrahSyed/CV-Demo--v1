@@ -1,0 +1,57 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>People Counter</title>
+  </head>
+<body style="background-color:#fafafa;">
+   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" rel="stylesheet">
+   <!-- <link href="slider-boxes.css" rel="stylesheet"> -->
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/slider-boxes.css') }}">
+   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+   
+   <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+   <script src="https://npmcdn.com/bootstrap@4.0.0-alpha.5/dist/js/bootstrap.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="application/json"></script>
+   <!-- <script src="slider-boxes.js"></script> -->
+   <script type="text/javascript" src="{{ url_for('static', filename='js/slider-boxes.js') }}"></script>
+   
+   <!-- <section class="orange-fade p-5 margin-top-xl pos-r"> -->
+     <div class="container">
+         <div class="row">
+         <div id="content" class="p-4 p-md-5 pt-5" >
+          <!-- <div id="content" class="p-4 p-md-5 pt-5"> -->
+           <h1 style= "font-weight: 400; color:#2F5662;" align="center" >People Counter</h1>
+           <p style="color:#458092;">People Counter is used for counting the number of people in the stores/buildings/shopping malls etc., in real-time. It is a reliable way to understand foot traffic in different areas within a specific premises. From retail stores to public buildings and airports, this valuable information helps a business make informed decisions.
+   
+   </p>
+         <!-- </div> -->
+          <div class="mt-5 pos-r">
+             <div class="carousel-controls testimonial-carousel-controls">
+               <div class="control prev"><i class="fa fa-chevron-left text-white">&nbsp;</i></div>
+               <div class="control next"><i class="fa fa-chevron-right text-white">&nbsp;</i></div>
+             </div>
+             <div class="testimonial-carousel">
+               <div class="one-slide white">
+                 <div class="testimonial w-100 h-100  p-3 text-center">
+                   <div class="message text-center text-gray">Estimate the results of an image using the model:</div>
+               <a href="{{ url_for('cv_people_counter_show') }}">People Counter</a>
+                   <div class="separator">&nbsp;</div>
+                   <div class="brand" ><img alt="People Counter" src="/static/people1.jpg" class="mx-auto"/></div>
+                 </div>
+               </div>
+               </div>
+            </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </body>
+   </html>
+   
+   <!-- </section> -->
+   

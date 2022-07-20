@@ -1,0 +1,40 @@
+{% extends 'base_default.html' %}
+
+{% block tab_title %}
+  CenterNet
+{% endblock %}
+
+{% block main_title %}
+  Object Detection
+{% endblock %}
+
+{% block sub_title %}
+  CenterNet
+{% endblock %}
+
+{% block sub_title_bold %} 
+  CenterNet
+{% endblock %}
+
+{% block description %}
+  is an anchorless object detection architecture. This structure has an important advantage in that it replaces the classical NMS (Non Maximum Suppression) at the post process, with a much more elegant algorithm, that is natural to the CNN flow. This mechanism enables a much faster inference.
+{% endblock %}
+
+{% block src %}
+
+src=  "{{ url_for('cv_obd_CenterNet_display_image', filename=filename) }}"
+height= "300px" width="700px"
+{% endblock %}
+
+{% block URL %} 
+/cv/obd/CenterNet
+{% endblock %}
+
+{% block video_or_image_text %} 
+  an image
+{% endblock %}
+
+{% block upload_type %}
+<input type="file" name="file" autocomplete="off" required>
+{% endblock %}
+

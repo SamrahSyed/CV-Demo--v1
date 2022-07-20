@@ -1,0 +1,39 @@
+{% extends 'base_default.html' %}
+
+{% block tab_title %}
+  Faster R-CNN
+{% endblock %}
+
+{% block main_title %}
+  Object Detection
+{% endblock %}
+
+{% block sub_title %}
+  Faster R-CNN
+{% endblock %}
+
+{% block sub_title_bold %} 
+  Faster R-CNN
+{% endblock %}
+
+{% block description %}
+  is a deep convolutional network used for object detection, that appears to the user as a single, end-to-end, unified network. The network can accurately and quickly predict the locations of different objects.
+{% endblock %}
+
+{% block src %}
+  src="{{ url_for('cv_obd_FASTER_R_CNN_display_image', filename=filename) }}"
+  height= "300px" width="700px"
+  {% endblock %}
+
+{% block URL %} 
+  /cv/obd/FASTER_RCNN
+{% endblock %}
+
+{% block video_or_image_text %} 
+  an image
+{% endblock %}
+
+{% block upload_type %}
+<input type="file" name="file" autocomplete="off" required>
+{% endblock %}
+

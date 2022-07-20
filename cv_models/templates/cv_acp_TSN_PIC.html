@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>TSN Pic</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <div id="loading"></div>
+    <div class="wrapper d-flex align-items-stretch">
+      <nav id="sidebar">
+        <div class="custom-menu">
+          <button type="button" id="sidebarCollapse" class="btn btn-primary">
+            <i class="fa fa-bars"></i>
+            <span class="sr-only">Toggle Menu</span>
+          </button>
+        </div>
+        <div class="p-4 pt-5">
+          <h1><a href="{{ url_for('home') }}" class="logo">Visionet</a></h1>
+          <ul class="list-unstyled components mb-5">
+            <li class="active">
+              <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
+                class="dropdown-toggle">Computer Vision</a>
+              <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li>
+                  <a href="{{ url_for('cv_obd') }}">Object Detection</a>
+                </li>
+                <li>
+                  <a href="{{ url_for('cv_ins_home') }}">Instance Segmentation</a>
+                </li>
+                <li>
+                <li>
+                  <a href="{{ url_for('cv_semantic_segmentation') }}">Semantic Segmentation</a>
+                </li>
+            </li>
+            <li>
+            <li>
+              <a href="{{ url_for('cv_action_prediction') }}">Action Prediction</a>
+            </li>
+            </li>
+            <li>
+            <li>
+              <a href="{{ url_for('cv_PEST') }}">Pose Estimation</a>
+            </li>
+            </li>
+  
+            <li>
+              <a href="{{ url_for('cv_people_counter_show_home') }}">People Counter</a>
+            </li>
+            <li>
+              <a href="{{ url_for('cv_face_home') }}">Face Recognition</a>
+            </li>
+            <li>
+              <a href="{{ url_for('cv_emd_home') }}">Emotional Detection</a>
+            </li>
+          </ul>
+  
+  
+  
+          </li>
+  
+          </ul>
+  
+  
+  
+  
+  
+        </div>
+      </nav>
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+
+        
+        <h6 style="font-weight: 400;color: #6d94a1;" align="center">Action Prediction</h6>
+        <h1 style= "font-weight: 400; color:#2F5662;" align="center" >TSN (Temporal Segment Network)</h1>
+		<p style="color:#458092;"><b>TSN (Temporal Segment Network) </b>is a widely adopted video classification method. It is proposed to incorporate temporal information from an entire video. The idea is straightforward: we can evenly divide the video into several segments, process each segment individually, obtain segmental consensus from each segment, and perform final prediction. 
+
+</p>
+        
+	<div style="width:100%">	
+<!-- <p> -->
+	<!-- {% with messages = get_flashed_messages() %} -->
+	  <!-- {% if messages %} -->
+		<!-- <ul> -->
+		<!-- {% for message in messages %} -->
+		  <!-- <li>{{ message }}</li> -->
+		<!-- {% endfor %} -->
+		<!-- </ul> -->
+	  <!-- {% endif %} -->
+	<!-- {% endwith %} -->
+<!-- </p> -->
+
+{% if filename %}
+		<div style="width: 40%; float: left;">
+		<img style="width: 500px"  src="{{ url_for('cv_acp_TSN_PIC_display_image', filename=filename) }}">
+
+{% endif %}
+<form method="post" action="/cv/action_prediction/TSN_PIC" enctype="multipart/form-data">
+    <h6>Upload an image to predict results</h6>
+	<dl>
+		<!-- <p> -->
+			<input type="button" id="loadFileXml" value="Upload Image" onclick="document.getElementById('file').click();" />
+			<input type="file" style="display:none;" id="file" name="file" autocomplete="off" required />
+		<!-- </p> -->
+    </dl>
+    <p>
+		<input type="submit" value="Submit"  onclick="loading()">
+	</p>
+</form>
+</div>
+	<div style="width: 43%; float: right;">
+	<style>
+	th {
+    display: table-cell;
+    vertical-align: inherit;
+    font-weight: normal;
+    text-align: -internal-center;
+}
+</style>
+
+	<table border=0 width=100%>
+	{% if filename %}
+	<p style="color:#2F5662;"><b>The input image frame is classified to be:</b>
+	{% endif %}
+{% for result in results%}
+    <tr>
+      <th scope="row">
+        {{result.header}}
+      </th>
+    
+      <td align='right'>
+        <pre style="color:#458092;">{{result.data}}</pre>
+      </td> 
+    </tr>
+{% endfor %}
+
+    </table>
+	</div>
+</div>
+      </div>
+		</div>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+<script type="text/javascript">// <![CDATA[
+        function loading(){
+            $("#loading").show();
+            $("#content").hide();       
+        }
+// ]]></script>
+<!-- 		<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/popper.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script> -->
+  </body>
+</html>

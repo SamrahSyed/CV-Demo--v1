@@ -1,0 +1,39 @@
+{% extends 'base_default.html' %}
+
+{% block tab_title %}
+  SSD
+{% endblock %}
+
+{% block main_title %}
+  Object Detection
+{% endblock %}
+
+{% block sub_title %}
+  SSD
+{% endblock %}
+
+{% block sub_title_bold %} 
+  SSD
+{% endblock %}
+
+{% block description %}
+  is a single-shot detector. It has no delegated region proposal network and predicts the boundary boxes and the classes directly from feature maps in one single pass. To improve accuracy, SSD introduces: small convolutional filters to predict object classes and offsets to default boundary boxes.
+{% endblock %}
+
+{% block src %}
+  src="{{ url_for('cv_obd_SSD_display_image', filename=filename) }}"
+  height= "300px" width="700px"
+{% endblock %}
+
+{% block URL %} 
+  /cv/obd/SSD
+{% endblock %}
+
+{% block video_or_image_text %} 
+  an image
+{% endblock %}
+
+{% block upload_type %}
+<input type="file" name="file" autocomplete="off" required>
+{% endblock %}
+
