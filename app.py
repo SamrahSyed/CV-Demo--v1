@@ -558,8 +558,6 @@ def cv_PEST_AlphaPose_upload_image():
 
 @app.route('/cv/PEST/AlphaPose/display/<filename>')
 def cv_PEST_AlphaPose_display_image(filename):
-    #print('display_image filename: ' + filename)
-    # return MASK_RCNN('static', filename='uploads/' + filename)
     return redirect(url_for('static', filename='uploads/' + filename), code=301)
 
 
