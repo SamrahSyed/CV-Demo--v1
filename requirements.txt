@@ -1,6 +1,7 @@
 face-recognition==1.3.0
 face-recognition-models==0.3.0
 Flask==2.0.1
+genism==3.8.3
 gluoncv==0.10.4.post1
 ipywidgets==7.6.3
 matplotlib==3.3.0
@@ -15,5 +16,6 @@ tensorflow==2.7.0
 tensorflow-estimator==2.7.0
 tensorflow-hub==0.12.0
 tensorflow-io-gcs-filesystem==0.22.0
+transformers==2.8.0
 Werkzeug==2.0.1
 zipp

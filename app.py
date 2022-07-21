@@ -1,6 +1,8 @@
 #import run3
-import cv_emd
-import testfordef
+#import cv_emd
+#import testfordef
+#import cv_emd_cam
+#Uncomment 1054, 1071, 889
 import flask
 from cv_pest_demo import VideoCamera
 from imutils.video import VideoStream
@@ -19,7 +21,6 @@ from werkzeug.utils import secure_filename
 from flask import Flask, flash, request, redirect, url_for, render_template, Response,  send_file
 import urllib.request
 import os
-import cv_emd_cam
 import nlp_summarization
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
@@ -886,7 +887,7 @@ def predict_for_face():
                 path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
                 print(path)
                 file.save(path)
-                result=testfordef.fcr(path)
+    #            result=testfordef.fcr(path)
                 #flash('Image successfully uploaded and displayed below')
                 return render_template('face_home_part1.html', filename=filename, result=result)
             else:
@@ -1051,7 +1052,7 @@ def cv_emd_test_upload_image():
         # print(file.config)
         global target_image_emd
         # target_image_emd=cv_emd.emd_test(path)
-        cv_emd.emd_test(path)
+        #cv_emd.emd_test(path)
         flash('Image successfully uploaded and displayed below')
         return render_template('cv_emd_test.html', filename=filename)
     else:
@@ -1068,14 +1069,14 @@ def cv_emd_test_display_image(filename):
     return redirect(url_for('static', filename='uploads/' + filename), code=301)
  
 
-@app.route('/cv/emd/test_page/cam')
+""" @app.route('/cv/emd/test_page/cam')
 def cv_emd_index():
     #cv_emd_cam.emdcam()
     return render_template('cv_emd_cam.html')
 
 @app.route('/cv/emd/test_page/cam/demo')
 def cv_emd_cam1():
-    cv_emd_cam.emdcam()
+    cv_emd_cam.emdcam() """
 
 @app.route('/nlp/summarization/home/abs' , methods=['POST'])
 def nlp_summ_2():
