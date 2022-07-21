@@ -1,5 +1,3 @@
-face-recognition==1.3.0
-face-recognition-models==0.3.0
 Flask==2.0.1
 genism==3.8.3
 gluoncv==0.10.4.post1
@@ -12,10 +10,6 @@ opencv-python==4.5.3.56
 pandas==1.1
 Pillow==8.3.1
 pypaz==0.1.6
-tensorflow==2.7.0
-tensorflow-estimator==2.7.0
-tensorflow-hub==0.12.0
-tensorflow-io-gcs-filesystem==0.22.0
 transformers==2.8.0
 Werkzeug==2.0.1
 zipp
