@@ -1,29 +1,14 @@
-#import run3
-import cv_emd
-#import testfordef
-import cv_emd_cam
-#Uncomment 1054, 1071, 889
 import flask
-from cv_pest_demo import VideoCamera
-from imutils.video import VideoStream
-import time
-import cv_obd_cam_demo
-import cv_objectdet
-import cv2
-import cv_pest
-from cv_acp import TSN_PIC
-import cv_acp
-from cv_ses import FCN, PSPNet, DeepLabV3
-import cv_ses
-from cv_ins import MASK_RCNN
-import cv_ins
-from werkzeug.utils import secure_filename
 from flask import Flask, flash, request, redirect, url_for, render_template, Response,  send_file
-import urllib.request
+from werkzeug.utils import secure_filename
 import os
+import cv_emd, cv_objectdet, cv_pest, cv_emd, cv_acp, cv_ses, cv_obd_cam_demo, cv_objectdet, cv_ins, cv_emd_cam
+from cv_pest_demo import VideoCamera
+import time
 import nlp_summarization
-
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+#import run3
+#import testfordef
 
 # pictures users upload for testing will be upload here. 
 UPLOAD_FOLDER = 'static/uploads/'
@@ -147,6 +132,7 @@ def cv_obd_MOB_NET():
 def cv_obd_cam():
     return render_template("cv_model_obd_cam.html")
 
+""" Uncomment this for People Counter Routes
 # People Counter
 @app.route('/cv/people_counter')
 def cv_people_counter_show_home():
@@ -154,7 +140,7 @@ def cv_people_counter_show_home():
 
 @app.route('/cv/people_counter/1')
 def cv_people_counter_show():
-    return render_template('cv_model_ppc_tech.html')
+    return render_template('cv_model_ppc_tech.html') """
 
 # Face Recognition
 @app.route('/cv/face_home')
